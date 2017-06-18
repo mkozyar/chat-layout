@@ -1,0 +1,324 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #555;
+    font-family: serif;
+}
+input{
+    margin: 0;
+    padding: 0;
+}
+/* Autorization */
+
+
+.author input[type = "radio"]{
+    display: none;
+}
+.author input[type = "radio"]:checked + label {
+		 background-color: #555;
+	}
+ .tabs{
+    padding: 5px 30px 5px;
+    border-radius: 15px 15px 0 0;
+    background-color: #999;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    left: -90px;
+    top: -5px;
+}
+input[id="login_tab"]:checked ~ .auth_forms .login_form,
+input[id="sign_tab"]:checked ~ .auth_forms .sign_form{
+	display: block;
+}
+.content, .auth_forms{
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 5px 10px;
+}
+.auth_forms{
+    border-radius: 0 0 5px 5px;
+    background-color: #999;
+    border-top: 3px solid #555;
+    margin-top: -1px;
+}
+
+.login_form, .sign_form{
+    display: none;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.login_form a{
+    text-decoration: none;
+    color: #ff9;
+}
+.auth_forms input{
+    margin-bottom: 25px;
+    margin-top: 10px;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+/* Hide arrow*/
+
+input[id = "hide"], input[id = "show"]{
+    display: none;
+}
+
+input[id = "hide"]:checked ~ .chat{
+    width: 90%;    
+}
+input[id = "hide"]:checked ~ .contacts{
+    width: 10%;
+    padding-right: 15px;
+}
+input[id = "hide"]:checked ~ .contacts .contact_items .contact_item{
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+input[id = "hide"]:checked ~ .contacts .contacts_header .search,
+input[id = "hide"]:checked ~ .contacts .contacts_header .control{
+    opacity: 0;
+}
+input[id = "hide"]:checked ~ .contacts .contacts_header #show_arrow{
+    display: block;
+    margin-left: 200px;
+}
+
+
+/* Chat */
+
+.contacts, .chat{
+    height: 100%;
+}
+.contacts{
+    background-color: #3b3e99;
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chat{
+    background-color: #999;
+    width: 60%;
+}
+.wrapper{
+    display: flex;
+}
+.wrapper, .author{
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 1%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+    height: 98%;
+}
+.author{
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    height: 80%;
+    background-color: #fff;
+    width: 80%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    text-align: center;
+    color: #fff;
+
+}
+.contacts_header{
+    position: fixed;
+    height: 70px;
+    width: 40%;
+    max-width: 500px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#hide_arrow, #show_arrow, .control, .fa{
+       color: #fff;
+       font-size: 25px;
+       cursor: pointer;
+}
+#hide_arrow input, #show_arrow input{
+    display: none;
+}
+#show_arrow{
+    display: none;
+}
+.search{
+    position: relative;
+}
+.search input{
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ededfa;
+    background-image: url("img/");
+    outline: none;
+}
+.fa-search{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    font-size: 14px;
+}
+.contact_items{
+    overflow: auto;
+    position: absolute;
+    bottom: 0px;
+    top: 70px;
+    margin-right: -22px;
+}
+.contact_item{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    overflow: hidden;
+}
+.active{
+    background-color: #f23f79;
+}
+.active .time{
+    background-color: #fff;
+    color: #f23f79;
+}
+.active .desc{
+    color: #fbc6d7;
+}
+.avatar{
+    position: relative;
+    min-width: 70px;
+    cursor: pointer;
+}
+.avatar img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 17px;
+}
+.avatar span{
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #ed145b;
+    padding: 0 3px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    max-width: 8px;
+}
+.contact_name{
+    width: 95%;
+    overflow: hidden;
+    color: #d7d8f1;
+    width: 29%;
+    flex-grow: 1;
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+.desc{
+    height: 20px;
+    overflow: hidden;
+    color: #8788bb;
+}
+.time{
+    background-color: #37398d;
+    height: 20px;  
+    width: 50px;
+    text-align: center;
+    border-radius: 15px;
+    color: #8788bb;
+    margin-top: 25px;
+    margin-right: 20px;
+    font-weight: 800;
+}
+header{
+    font-family: 'Lobster';
+    height: 70px;
+    margin-top: -22px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 1px black;
+}
+#chat_title a{
+    text-decoration: none;
+    color: #fff;
+}
+.chat_items{
+    overflow: auto;
+    position: absolute;
+    top: 70px;
+    bottom: 50px;
+    margin-right: -22px;
+}
+.chat_item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-right: 30%;
+}
+.chat_img img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 31px 70px 25px;    
+}
+.msg{
+    background-color: #989ad7;
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
+}
+.chat_time{
+    color: #e1e1f9;
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.my_msg{
+    flex-direction:row-reverse;
+    margin-right: 0px;
+    margin-left: 30%;
+}
+.my_msg .msg {
+    background-color: #f1f1fb;
+    color: #000;
+}
+.my_msg .chat_time{
+    text-align: left;
+}
+.write_msg{
+    position: fixed;
+    bottom: 12px;
+    text-align: center;
+    width: 50%;
+}
+.write_msg input{
+    outline: none;
+    height: 25px;
+    width: 90%;
+    border-radius: 15px;
+    background-color: #ededfa;
+    padding-left: 15px;
+}
